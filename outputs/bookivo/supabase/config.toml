@@ -1,0 +1,36 @@
+project_id = "bookivo"
+
+[api]
+enabled = true
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+major_version = 15
+
+[auth]
+enabled = true
+site_url = "https://bookivo.in"
+additional_redirect_urls = ["https://www.bookivo.in/**", "https://bookivo.in/**", "http://localhost:5173/**", "http://127.0.0.1:5173/**"]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+
+[functions.create-cashfree-order]
+verify_jwt = false
+
+[functions.verify-cashfree-payment]
+verify_jwt = false
+
+[functions.cashfree-webhook]
+verify_jwt = false
+
+[functions.request-ebook-download]
+verify_jwt = false
+
+[functions.admin-management]
+verify_jwt = false
